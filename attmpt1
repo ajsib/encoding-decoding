@@ -1,0 +1,219 @@
+def encode(en):
+    wq = [char for char in en]
+    for i in range(0, len(wq)):
+        if wq[i] == 'E':
+            wq[i] = 'A'
+        elif wq[i] == 'I':
+            wq[i] = 'T'
+        elif wq[i] == 'S':
+            wq[i] = 'TA'
+        elif wq[i] == 'H':
+            wq[i] = 'TT'
+        elif wq[i] == 'A':
+            wq[i] = 'AC'
+        elif wq[i] == 'U':
+            wq[i] = 'TC'
+        elif wq[i] == 'V':
+            wq[i] = 'TAC'
+        elif wq[i] == 'W':
+            wq[i] = 'AG'
+        elif wq[i] == 'J':
+            wq[i] = 'AGC'
+        elif wq[i] == 'R':
+            wq[i] = 'ACA'
+        elif wq[i] == 'L':
+            wq[i] = 'ACT'
+        elif wq[i] == 'F':
+            wq[i] = 'TCA'
+        elif wq[i] == 'P':
+            wq[i] = 'AGA'
+        elif wq[i] == 'T':
+            wq[i] = 'C'
+        elif wq[i] == 'M':
+            wq[i] = 'G'
+        elif wq[i] == 'O':
+            wq[i] = 'GC'
+        elif wq[i] == 'N':
+            wq[i] = 'CA'
+        elif wq[i] == 'G':
+            wq[i] = 'GA'
+        elif wq[i] == 'Z':
+            wq[i] = 'GT'
+        elif wq[i] == 'Q':
+            wq[i] = 'GAC'
+        elif wq[i] == 'D':
+            wq[i] = 'CT'
+        elif wq[i] == 'B':
+            wq[i] = 'CTA'
+        elif wq[i] == 'K':
+            wq[i] = 'CAC'
+        elif wq[i] == 'C':
+            wq[i] = 'CACA'
+        elif wq[i] == 'Y':
+            wq[i] = 'CAG'
+        elif wq[i] == 'X':
+            wq[i] = 'CTC'
+        elif wq[i] == '1':
+            wq[i] = 'AGG'
+        elif wq[i] == '2':
+            wq[i] = 'TGC'
+        elif wq[i] == '3':
+            wq[i] = 'TAG'
+        elif wq[i] == '4':
+            wq[i] = 'TTC'
+        elif wq[i] == '5':
+            wq[i] = 'TTA'
+        elif wq[i] == '6':
+            wq[i] = 'CTT'
+        elif wq[i] == '7':
+            wq[i] = 'GTA'
+        elif wq[i] == '8':
+            wq[i] = 'GCT'
+        elif wq[i] == '9':
+            wq[i] = 'GGA'
+        elif wq[i] == '0':
+            wq[i] = 'GGC'
+        elif wq[i] == '.':
+            wq[i] = 'AGAC'
+        elif wq[i] == ' ':
+            wq[i] = '_'
+        else:
+            print("Please Enter Only Characters and Numbers + '.' ")
+
+    hv = ','.join(wq)
+    dw = [char for char in hv]
+    gg = []
+    for i, elem in enumerate(dw):
+        if ',' in elem:
+            gg.append(i)
+    hew = [j for i, j in enumerate(dw) if i not in gg]
+    print("\033[92m\033[1m" + "----------Encoded Text Below----------" + "\033[0m" + '\n' + ''.join(hew) + '\n' + "--------------------------------------")
+
+    stw = []
+    for element in gg:
+        stw.append(str(element))
+    grw = ':'.join(stw)
+    print(
+        "\033[92m\033[1m" + "------------Password Below------------" + "\033[0m" + '\n' + grw + '\n' + "--------------------------------------")
+
+
+def decode(ex, yu,):
+
+    que = yu.split(':')
+    res = [int(i) for i in que]
+    # res = index list to insert ',' into wq
+    fd = [char for char in ex]
+
+    for p in range(0, len(res)):
+         fd.insert(res[p] , ',')
+    ged = ''.join(fd)
+    qqww = ged.split(',')
+
+    for i in range(0, len(qqww)):
+        if qqww[i] == 'A':
+            qqww[i] = 'E'
+        elif qqww[i] == 'T':
+            qqww[i] = 'I'
+        elif qqww[i] == 'TA':
+            qqww[i] = 'S'
+        elif qqww[i] == 'TT':
+            qqww[i] = 'H'
+        elif qqww[i] == 'AC':
+            qqww[i] = 'A'
+        elif qqww[i] == 'TC':
+            qqww[i] = 'U'
+        elif qqww[i] == 'TAC':
+            qqww[i] = 'V'
+        elif qqww[i] == 'AG':
+            qqww[i] = 'W'
+        elif qqww[i] == 'AGC':
+            qqww[i] = 'J'
+        elif qqww[i] == 'ACA':
+            qqww[i] = 'R'
+        elif qqww[i] == 'ACT':
+            qqww[i] = 'L'
+        elif qqww[i] == 'TCA':
+            qqww[i] = 'F'
+        elif qqww[i] == 'AGA':
+            qqww[i] = 'P'
+        elif qqww[i] == 'C':
+            qqww[i] = 'T'
+        elif qqww[i] == 'G':
+            qqww[i] = 'M'
+        elif qqww[i] == 'GC':
+            qqww[i] = 'O'
+        elif qqww[i] == 'CA':
+            qqww[i] = 'N'
+        elif qqww[i] == 'GA':
+            qqww[i] = 'G'
+        elif qqww[i] == 'GT':
+            qqww[i] = 'Z'
+        elif qqww[i] == 'GAC':
+            qqww[i] = 'Q'
+        elif qqww[i] == 'CT':
+            qqww[i] = 'D'
+        elif qqww[i] == 'CTA':
+            qqww[i] = 'B'
+        elif qqww[i] == 'CAC':
+            qqww[i] = 'K'
+        elif qqww[i] == 'CACA':
+            qqww[i] = 'C'
+        elif qqww[i] == 'CAG':
+            qqww[i] = 'Y'
+        elif qqww[i] == 'CTC':
+            qqww[i] = 'X'
+        elif qqww[i] == 'AGG':
+            qqww[i] = '1'
+        elif qqww[i] == 'TGC':
+            qqww[i] = '2'
+        elif qqww[i] == 'TAG':
+            qqww[i] = '3'
+        elif qqww[i] == 'TTC':
+            qqww[i] = '4'
+        elif qqww[i] == 'TTA':
+            qqww[i] = '5'
+        elif qqww[i] == 'CTT':
+            qqww[i] = '6'
+        elif qqww[i] == 'GTA':
+            qqww[i] = '7'
+        elif qqww[i] == 'GCT':
+            qqww[i] = '8'
+        elif qqww[i] == 'GGA':
+            qqww[i] = '9'
+        elif qqww[i] == 'GGC':
+            qqww[i] = '0'
+        elif qqww[i] == 'AGAC':
+            qqww[i] = '.'
+        elif qqww[i] == '_':
+            qqww[i] = ' '
+        else:
+            print("Incorrect Key")
+    print('\n' + '\n' "\033[92m\033[1m" + "----------Decrypted Text Below----------" + "\033[0m" + '\n' + ''.join(qqww) + '\n' + "--------------------------------------")
+
+
+# main
+exit = 1
+while exit == 1:
+    print("Would You Like to " + "\033[1m" + "Encode" + "\033[0m" + " or " + "\033[1m" + "Decode?" + "\033[0m")
+    print("To Encode Enter" "\033[91m" + " 'e' " + "\033[0m")
+    print("to Decode Enter" "\033[91m" + " 'd' " + "\033[0m")
+    task = input("-------Input--Here------>")
+    task = task.lower()
+    if task == "e":
+        en = input('\n' + '\n' + "Enter a Sentence: " + '\n' + '\n')
+        en = en.upper()
+        encode(en)
+        print('\n' + '\n')
+    elif task == "d":
+        ex = input("Enter Coded Message: ")
+        yu = input("Enter Password: ")
+        ex = ex.upper()
+        decode(ex, yu)
+
+    elif task == "exit":
+        exit = 0
+
+    else:
+        print("Enter 'e' to Encode")
+        print("Enter 'd' to Decode")
+        print("Type 'exit' to Exit")
